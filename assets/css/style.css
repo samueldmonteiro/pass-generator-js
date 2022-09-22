@@ -1,0 +1,88 @@
+@import "default.css";
+
+
+body {
+    min-height: 100vh;
+    background-color: #202225;
+    position: relative;
+
+}
+
+.pass-generator {
+    color: white;
+    width: 750px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+}
+
+.pass-generator .title{
+    margin: 15px 0px;
+    object-fit: cover;
+}
+
+.length-control{
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.length-control .length{
+    margin:0;
+    margin-bottom: 5px;
+}
+
+.length-control #lengthValue{
+    margin-left: 10px;
+}
+
+.options-control .options{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.options-control .option {
+    display: flex;
+    align-items: center;
+}
+
+.options-control .option input {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.show-password{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: max-content;
+    max-width: 100%;
+
+}
+
+.show-password .msg{
+    font-size: 1.6em;
+}
+
+.show-password #password{
+    background-color: black;
+    padding: 15px;
+    width: 100%;
+    margin: 15px 0;
+    color: white;
+    font-size: 1.1em;
+    word-break: break-all;
+}
+
+@media (max-width: 780px){
+    body{
+        padding: 15px;
+    }
+
+    .pass-generator{
+        width: 100%;
+    }
+}
