@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Password Generator</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-        <link href="assets/css/style.css" rel="stylesheet">
-    </head>
-    <body>
-         
-        <div class="pass-generator">
 
-            <img class="title" src="assets/images/title.png">
+<head>
+    <title>Gerador de Senha</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
 
-            <div class="length-control">
-                <p class="length">Tamanho da Senha: <span id="lengthValue">0</span></p>
-                <input type="range" class="form-range" min="0" max="5" step="0.5" value="0" id="customRange3">
-            </div>
+<body>
 
-            <div class="options-control">
+    <div class="password-generator">
 
-               <div class="options">
+        <img class="title" src="assets/images/title.png">
 
-                    <div class="option form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Maiúsculo</label>
-                    </div>
-
-                     <div class="option form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Números</label>
-                    </div>
-
-                     <div class="option form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Caractéres Especiais</label>
-                    </div>
-
-               </div>
-
-            </div>
-
-            <div class="show-password">
-                <h2 class="msg">Senha gerada abaixo:</h2>
-                <p id="password" class="btn">8w8w8w8***</p>
-            </div>
-            <!-- <button type="submit" id="Gerar" >Senha</button> -->
-
+        <div class="length-control">
+            <p class="length">Tamanho da Senha: <span id="lengthValue">0</span></p>
+            <input type="range" class="form-range" min="3" max="200" value="25" id="lengthControl">
         </div>
-    </body>
+
+        <div class="options-control">
+            <div class="options">
+
+                <div class="option form-check form-switch">
+                    <input id="lowercase" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    <label class="form-check-label" for="flexSwitchCheckDefault" checked>Minúsculo</label>
+                </div>
+
+                <div class="option form-check form-switch">
+                    <input id="uppercase" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Maiúsculo</label>
+                </div>
+
+                <div class="option form-check form-switch">
+                    <input id="numbers" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+                    <label class="form-check-label" for="flexSwitchCheckDefault" >Números</label>
+                </div>
+
+                <div class="option form-check form-switch">
+                    <input id="specialCaracters" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Caractéres Especiais</label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="show-password">
+            <h2 class="msg">Senha gerada abaixo:</h2>
+            <p id="password">********</p>
+        </div>
+    </div>
+</body>
+
+<!-- JS -->
+<script type="module" src="assets/js/passwordGenerator.js"></script>
+
 </html>

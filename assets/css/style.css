@@ -1,14 +1,12 @@
 @import "default.css";
 
-
 body {
     min-height: 100vh;
     background-color: #202225;
     position: relative;
-
 }
 
-.pass-generator {
+.password-generator {
     color: white;
     width: 750px;
     position: absolute;
@@ -18,29 +16,30 @@ body {
     padding: 15px;
 }
 
-.pass-generator .title{
+.password-generator .title {
     margin: 15px 0px;
     object-fit: cover;
 }
 
-.length-control{
+.length-control {
     text-align: center;
     margin: 15px 0px;
 }
 
-.length-control .length{
-    margin:0;
+.length-control .length {
+    margin: 0;
     margin-bottom: 5px;
 }
 
-.length-control #lengthValue{
+.length-control #lengthValue {
     margin-left: 10px;
 }
 
-.options-control .options{
+.options-control .options {
     display: flex;
     justify-content: center;
     gap: 40px;
+    row-gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -54,7 +53,7 @@ body {
     margin-right: 10px;
 }
 
-.show-password{
+.show-password {
     text-align: center;
     margin: 0 auto;
     margin-top: 40px;
@@ -63,11 +62,11 @@ body {
 
 }
 
-.show-password .msg{
-    font-size: 1.6em;
+.show-password .msg {
+    font-size: 1.5em;
 }
 
-.show-password #password{
+.show-password #password {
     background-color: black;
     padding: 15px;
     width: 100%;
@@ -75,14 +74,16 @@ body {
     color: white;
     font-size: 1.1em;
     word-break: break-all;
+    border: none;
+    border-radius: 6px;
 }
 
-@media (max-width: 780px){
-    body{
+@media (max-width: 780px) {
+    body {
         padding: 15px;
     }
 
-    .pass-generator{
+    .password-generator {
         width: 100%;
     }
 }
