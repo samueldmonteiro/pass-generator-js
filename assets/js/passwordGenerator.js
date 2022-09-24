@@ -11,7 +11,6 @@ const characterTypes = {
 const lengthControl = qs("#lengthControl");
 const passwordOptions = qsAll(".options-control .options .option input");
 
-
 if (passwordOptions) {
     passwordOptions.forEach(option => {
         option.addEventListener("click", showPassword)
@@ -30,13 +29,16 @@ function showPassword() {
 
     let passwordLength = lengthControl.value;
     let chars = getCharacters();
+    let password = generatePassword(chars, passwordLength);
 
-    let password = genPassword(chars, passwordLength);
-
+    if(!password){
+        qs("#password").innerText = "Sem opções para gerar a senha!";
+        return;
+    }
     qs("#password").innerText = password;
 }
 
-function genPassword(chars, length) {
+function generatePassword(chars, length) {
 
     let password = "";
 
@@ -53,7 +55,7 @@ function getCharacters() {
 
     passwordOptions.forEach(option => {
         if (option.checked) {
-            let type = option.getAttribute("id");
+            let type = option.id;
             chars += characterTypes[type];
         }
     });
