@@ -10,6 +10,8 @@ const characterTypes = {
 
 const lengthControl = qs("#lengthControl");
 const passwordOptions = qsAll(".options-control .options .option input");
+const passwordElement = qs("#password");
+const copyPasswordElement = qs(".copy-password");
 
 if (passwordOptions) {
     passwordOptions.forEach(option => {
@@ -25,17 +27,50 @@ if (lengthControl) {
     })
 }
 
+if (qs(".container-password")) {
+
+    let containerPassword = qs(".container-password");
+
+    containerPassword.addEventListener("mouseover", () => {
+        copyPasswordElement.style.opacity = "1";
+    });
+    containerPassword.addEventListener("mouseout", () => {
+        copyPasswordElement.style.opacity = "0";
+    });
+}
+
+if(copyPasswordElement){
+    copyPasswordElement.addEventListener("click", (e)=>{
+
+        let element = e.currentTarget;
+        element.querySelector("span").innerText = "Senha Copiada";
+
+        let icon = element.querySelector(".bi");
+        icon.classList.remove("bi-clipboard-fill");
+        icon.classList.add("bi-clipboard-check-fill");
+
+        copyPassword();
+    });
+}
+
+function copyPassword(){
+    let password = passwordElement.innerText;
+    navigator.clipboard.writeText(password);
+}
+
 function showPassword() {
+
+    restartWindow();
 
     let passwordLength = lengthControl.value;
     let chars = getCharacters();
     let password = generatePassword(chars, passwordLength);
 
-    if(!password){
-        qs("#password").innerText = "Sem opções para gerar a senha!";
+    if (!password) {
+        passwordElement.innerText = "Sem opções para gerar a senha!";
         return;
     }
-    qs("#password").innerText = password;
+    passwordElement.innerText = password;
 }
 
 function generatePassword(chars, length) {
@@ -60,6 +95,14 @@ function getCharacters() {
         }
     });
     return chars;
+}
+
+function restartWindow(){
+
+    let copyIcon = copyPasswordElement.querySelector(".bi");
+    copyIcon.classList.add("bi-clipboard-fill");
+    copyIcon.classList.remove("bi-clipboard-check-fill");
+    copyPasswordElement.querySelector("span").innerText = "Copiar Senha";
 }
 
 function init() {
