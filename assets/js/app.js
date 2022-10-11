@@ -1,5 +1,5 @@
-import { qs, qsAll } from "./utils.js";
-import { passwordGenerator, characterTypes } from "./passwordGenerator.js";
+import { qs, qsAll } from "./modules/utils.js";
+import { passwordGenerator, characterTypes } from "./modules/passwordGenerator.js";
 
 const passwordLengthControl = qs("#lengthControl");
 const passwordSettings = qsAll(".options-control .options .option input");
