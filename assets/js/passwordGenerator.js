@@ -1,4 +1,4 @@
-import { qs, qsAll, log } from "./utils.js";
+import { qs, qsAll} from "./utils.js";
 
 const characterTypes = {
 
