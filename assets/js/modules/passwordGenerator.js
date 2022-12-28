@@ -3,7 +3,7 @@ export const characterTypes = {
     lowercase: "abcefghijklmnoprstuvwxyz",
     uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     numbers: "0123456789",
-    specialCaracters: "!@#$%*_><.;"
+    specialCaracters: "_!@#*&"
 }
 
 export const passwordGenerator = {
